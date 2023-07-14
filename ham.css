@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+  }
+  
+  body {
+    /* background is white by default but added for clarity */
+    background: white;
+    width: 100%;
+  }
+  
+  .hamburger, .close {
+    border: none;
+    cursor: pointer;
+    /* position absolute position the icons relative to the body because they have no position relative parents*/
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+  }
+  
+  .hamburger {
+    background: red;
+  }
+  
+  .close {
+    background: rgba(40, 20, 154, 0.345);
+  }
+  
+  .hamburger img, .close img {
+    width: 100%;
+    height: 90%;
+  }
+  
+  .navbar {
+    position: absolute;
+    /* a higher z-index put navbar above hamburger */
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    /* basic menu styling*/
+    list-style: none;
+    background: rgba(132, 211, 20, 0.588);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    /* animate slide up/down */
+    transform: translateY(-100%);
+    transition: transform 0.9s ease-out;
+  }
+  
+  /* :target is called when its anchor id #navbar is called by clicking on the hamburger which has href="#navbar" */
+  
+  .navbar:target {
+    /* show navbar */
+    transform: translateY(0);
+  }
+  
+  li a {
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(175, 11, 126);
+    font-weight: bold;
+    font-size: 1.2rem;
+    /* remove default underline and add our own with padding and border bottom */
+    text-decoration: none;
+    border-bottom: 1px solid black;
+    padding-bottom: 0.5rem;
+  }
+  
+  li a:hover, li a:focus {
+    /* show border bottom */
+    /* border-bottom: 1px solid white; */
+    text-decoration: underline wheat;
+    box-shadow: rgba(40, 20, 154, 0.345);
+  }
+
+  li a:hover{
+    color: aqua;
+  }
